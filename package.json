@@ -1,6 +1,6 @@
 {
   "name": "consulta_lineas_registradas",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,13 +12,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^11.8.0",
-      "onFail": "download"
-    }
-  },
+  "packageManager": "pnpm@11.8.0",
+  "engines": {
+    "node": ">=22"
+    },
   "type": "module",
   "devDependencies": {
     "vite": "^8.0.16"
