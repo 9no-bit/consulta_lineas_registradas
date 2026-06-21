@@ -1,38 +1,49 @@
 # Consulta de lineas registradas
 
-Proyecto base para consultar lineas registradas desde una interfaz web simple.
+Proyecto base para consultar lineas registradas desde una interfaz web simple usando Vite y Tailwind CSS v4.
 
-## Estado actual
+## Stack
 
-- Estructura inicial creada.
-- Vista principal en `src/index.html`.
-- Servidor de desarrollo configurado con Vite.
+- Vite
+- Tailwind CSS v4 (`tailwindcss` + `@tailwindcss/vite`)
+- HTML/CSS/JS modular
 
 ## Requisitos
 
-- Node.js 18+ (recomendado 20+)
-- pnpm
+- Node.js `>=22`
+- pnpm `11.8.0`
 
-## Primeros pasos
+## Instalacion y desarrollo
 
 1. Instala dependencias:
    `pnpm install`
-2. Inicia el proyecto:
+2. Inicia el servidor de desarrollo:
    `pnpm start`
 
-Al ejecutar `pnpm start`, se abre automaticamente el navegador en `http://localhost:5173/` cargando `src/index.html`.
+Al ejecutar `pnpm start`, se abre automaticamente `http://localhost:5173/`.
 
 ## Scripts disponibles
 
 - `pnpm start`: inicia Vite en modo desarrollo.
-- `pnpm run build`: genera el build optimizado para produccion.
-- `pnpm run preview`: levanta una vista previa del build local.
+- `pnpm run build`: genera build optimizado para produccion.
+- `pnpm run preview`: sirve localmente el build de `dist`.
+
+## Tailwind CSS
+
+La hoja `src/styles.css` importa Tailwind con:
+
+`@import "tailwindcss";`
+
+Importante: como `vite.config.js` usa `root: "src"`, los assets dentro de `src` se referencian desde `/`.
+Ejemplo correcto en `src/index.html`:
+
+`<link rel="stylesheet" href="/styles.css">`
 
 ## Deploy en Vercel
 
-El proyecto esta configurado para compilar con Vite y publicar el resultado en `dist`.
+El proyecto esta configurado para compilar con Vite y publicar en `dist`.
 
-- Comando de build: `pnpm run build`
-- Directorio de salida: `dist`
+- Build command: `pnpm run build`
+- Output directory: `dist`
 
-Esta configuracion vive en `vercel.json` y usa `vite.config.js` con `root: 'src'`, por lo que Vercel renderiza correctamente `src/index.html` como entrada principal.
+Configuracion en `vercel.json`.
